@@ -1,12 +1,9 @@
-import JSX from './pages/fundamental/JSX';
-import Props from './pages/fundamental/Props';
-import State from './pages/fundamental/State';
-import TonyColorBox from './sampleApp/tony/TonyColorBox';
+import TuColorBox from "./sampleApp/tu/TuColorBox";
 
 function App() {
   return (
     <>
-      <JSX />
+      {/* <JSX />
 
       <br />
       <br />
@@ -25,9 +22,13 @@ function App() {
 
       <br />
       <br />
-      <br />
+      <br /> */}
+
+      <div className="grid grid-cols-2 gap-6 mb-8 mt-10">
+        <TuColorBox />
+      </div>
     </>
-  )
+  );
 }
 
 export default App;
