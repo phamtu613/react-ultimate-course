@@ -1,5 +1,6 @@
 import Typography from '../atoms/Typography'
 import Input from '../atoms/Input'
+import Button from '../atoms/Button'
 
 /* dynamic form
 form1: first name, last name
@@ -18,6 +19,8 @@ function Form() {
     <form>
       <Typography />
       <Input />
+
+      <Button />
     </form>
   )
 }

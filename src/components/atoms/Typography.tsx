@@ -1,8 +1,8 @@
 import React from 'react'
 
-function Typography() {
+function Typography({ children }: React.PropsWithChildren) {
   return (
-    <div>Typography</div>
+    <div>{children}</div>
   )
 }
 
