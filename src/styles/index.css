@@ -1,10 +1,1 @@
-body {
-  font-size: 16px;
-}
-
-/*
-about about.css
-term term.css
-contact contact.css
-*/
-
+@import "tailwindcss";
