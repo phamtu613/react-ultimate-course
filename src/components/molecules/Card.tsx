@@ -1,5 +1,5 @@
-import React from 'react'
-import type { Person } from '../../pages/fundamental/Props'
+import React from "react";
+import type { Person } from "../../pages/fundamental/Props";
 
 /* access properties in object
 object.name
@@ -12,14 +12,14 @@ render component into jsx
 */
 
 interface CardProps {
-  name: string,
-  isLoading?: boolean,
-  onClick: () => void,
-  person: Person,
-  colors: string[]
-  component1: React.ElementType,
-  component2: React.ReactNode,
-  "name-bird": string
+  name: string;
+  isLoading?: boolean;
+  onClick: () => void;
+  person: Person;
+  colors: string[];
+  component1: React.ElementType;
+  component2: React.ReactNode;
+  "name-bird": string;
 }
 
 function Card({
@@ -34,7 +34,7 @@ function Card({
       Component1: <Component1 text="Component1" /> <br />
       Component2: {component2}
     </div>
-  )
+  );
 }
 
-export default Card
+export default Card;

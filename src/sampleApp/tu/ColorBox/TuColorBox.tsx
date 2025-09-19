@@ -17,7 +17,9 @@ export default function TuColorBox() {
   return (
     <div className="w-2/3 mx-auto">
       <div className="text-center mb-12">
-        <h1 className="text-2xl font-bold text-slate-800 mb-4">TuPV</h1>
+        <h1 className="text-2xl font-bold text-slate-800 mb-4">
+          Sample App - ColorBox
+        </h1>
       </div>
 
       <div className="grid grid-cols-2 gap-6 mb-8">
