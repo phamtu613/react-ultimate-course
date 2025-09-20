@@ -1,5 +1,5 @@
 import React from "react";
-import TaoBox from "./components/TaoBox";
+import TaoBox from "./Components/TaoBox";
 
 function App() {
   return (
