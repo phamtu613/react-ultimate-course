@@ -52,6 +52,8 @@ function App() {
 
       <div className="grid grid-cols-2 gap-6 mb-8 mt-10">
         <TuColorBox />
+      </div>
+      <div className="grid grid-cols-2 gap-6 mb-8 mt-10">
         <GenerateBox />
       </div>
     </>

@@ -1,18 +1,26 @@
 import { useState } from "react";
 import ColorBox from "./ColorBox";
 
-export interface IColor {
+export interface IBox {
   name: string;
   background: string;
 }
-const COLOR_LIST: IColor[] = [
+
+const COLOR_LIST: IBox[] = [
   { name: "Red", background: "#FF6B6B" },
   { name: "Yellow", background: "#FFD93D" },
   { name: "Aqua", background: "#6BCBF7" },
   { name: "Purple", background: "#C77DFF" },
 ];
+
 export default function TuColorBox() {
   const [selectedColor, setSelectedColor] = useState<string>("");
+
+  function updateColor(color: string) {
+    setSelectedColor(
+      selectedColor === color ? "" : color
+    );
+  }
 
   return (
     <div className="w-2/3 mx-auto">
@@ -23,12 +31,12 @@ export default function TuColorBox() {
       </div>
 
       <div className="grid grid-cols-2 gap-6 mb-8">
-        {COLOR_LIST.map((color, index) => (
+        {COLOR_LIST.map((box, index) => (
           <ColorBox
             key={index}
-            color={color}
+            box={box}
             selectedColor={selectedColor}
-            setSelectedColor={setSelectedColor}
+            updateColor={updateColor}
           />
         ))}
       </div>

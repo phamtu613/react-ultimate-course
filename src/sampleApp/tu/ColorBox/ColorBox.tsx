@@ -1,29 +1,24 @@
-import type { IColor } from "./TuColorBox";
+import type { IBox } from "./TuColorBox";
 
 interface ColorBoxProps {
-  color: IColor;
+  box: IBox;
   selectedColor: string;
-  setSelectedColor: (color: string) => void;
+  updateColor: (color: string) => void;
 }
 export default function ColorBox({
-  color,
+  box,
   selectedColor,
-  setSelectedColor,
+  updateColor,
 }: ColorBoxProps) {
-  const handleClickBox = () => {
-    setSelectedColor(
-      selectedColor === color.background ? "" : color.background
-    );
-  };
   return (
     <div
       className="cursor-pointer transition-all duration-300 h-28 hover:scale-105 flex items-center justify-center rounded-sm"
       style={{
-        backgroundColor: selectedColor ? selectedColor : color.background,
+        backgroundColor: selectedColor ? selectedColor : box.background,
       }}
-      onClick={handleClickBox}
+      onClick={() => updateColor(box.background)}
     >
-      <h3 className="text-white font-bold text-lg">{color.name}</h3>
+      <h3 className="text-white font-bold text-lg">{box.name}</h3>
     </div>
   );
 }

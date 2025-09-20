@@ -5,6 +5,17 @@ import Title from "../../../components/atoms/Title";
 import { randomHexColor } from "../../../utils";
 import Box from "./Box";
 
+/*
+ function convertTimestampToString() {
+  return xxx
+ }
+  const abc = convertTimestampToString();
+  function xx() {
+
+  }
+   
+*/
+
 export interface IBox {
   id: number;
   color: string;
@@ -13,19 +24,17 @@ export interface IBox {
 
 export default function GenerateBox() {
   const [numberBoxes, setNumberBoxes] = useState<number>(0);
-  const [boxes, setBoxes] = useState<IBox[]>([]);
+  const [boxes, setBoxes] = useState<IBox[]>([]); // []
 
   const generateBox = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
     setBoxes([]);
-    return Array(numberBoxes)
+    const newBox: IBox[] = Array(numberBoxes)
       .fill({})
       .map((_, index) => {
-        setBoxes((prev) => [
-          ...prev,
-          { id: index, color: randomHexColor(), name: `box #${index + 1}` },
-        ]);
+        return { id: index, color: randomHexColor(), name: `box #${index + 1}` }
       });
+    setBoxes(newBox)
   };
 
   return (
@@ -72,7 +81,7 @@ export default function GenerateBox() {
       </div>
 
       <div className="grid grid-cols-4 gap-4 max-w-md">
-        {boxes?.map((box) => (
+        {boxes.map((box) => (
           <Box key={box.id} box={box} />
         ))}
       </div>
