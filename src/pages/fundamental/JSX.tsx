@@ -1,6 +1,4 @@
 import React from "react";
-import Button from "../../components/atoms/Button";
-
 function JSX() {
   const background = 'red';
 
@@ -22,7 +20,6 @@ function JSX() {
 
       {renderButton}
 
-      <Button />
     </React.Fragment>
   )
 }

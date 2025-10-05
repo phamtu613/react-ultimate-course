@@ -29,6 +29,7 @@ function Card({
   component2,
   ...restProps
 }: CardProps) {
+  console.log('restProps: ', restProps)
   return (
     <div>
       Component1: <Component1 text="Component1" /> <br />

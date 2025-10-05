@@ -10,7 +10,7 @@ objectA = { a: 1, b: 2 }
 */
 
 function State() {
-  const [timestamp, setTimestamp] = React.useState(Date.now())
+  const [timestamp] = React.useState(Date.now())
   const [count, setCount] = React.useState(1);
   const [message, setMessage] = React.useState({
     name: 'tony',

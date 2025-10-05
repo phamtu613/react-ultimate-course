@@ -1,0 +1,14 @@
+export const API_BACKEND = 'xxxx';
+
+export const INVOICE_STATUS = {
+  NEW: 'NEW',
+  PENDING_APPROVED: 'PENDING_APPROVED',
+  APPROVED: 'APPROVED',
+  REJECTED: 'REJECTED'
+}
+
+export const USER_ROLE = {
+  ADMIN: 'ADMIN',
+  OPERATOR: 'OPERATOR',
+  MEMBER: 'MEMBER',
+}

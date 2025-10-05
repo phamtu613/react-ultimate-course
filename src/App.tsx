@@ -1,6 +1,8 @@
 import Component from "./pages/fundamental/Component";
 import ConditionalRendering from "./pages/fundamental/ConditionalRendering";
+import Form from "./pages/fundamental/Form";
 import JSX from "./pages/fundamental/JSX";
+import LiftingStateUp from "./pages/fundamental/LiftingStateUp";
 import ListKey from "./pages/fundamental/ListKey";
 import Props from "./pages/fundamental/Props";
 import State from "./pages/fundamental/State";
@@ -47,8 +49,6 @@ function App() {
 
       <br />
       <br />
-      <br />
-      <br />
 
       <div className="grid grid-cols-2 gap-6 mb-8 mt-10">
         <TuColorBox />
@@ -56,6 +56,26 @@ function App() {
       <div className="grid grid-cols-2 gap-6 mb-8 mt-10">
         <GenerateBox />
       </div>
+
+      <br />
+      <br />
+
+      <LiftingStateUp />
+
+      <br />
+      <br />
+
+      <Form />
+
+      <br />
+      <br />
+       <br />
+      <br />
+       <br />
+      <br />
+       <br />
+      <br />
+
     </>
   );
 }

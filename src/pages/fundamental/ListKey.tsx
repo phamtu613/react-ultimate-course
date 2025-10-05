@@ -1,14 +1,14 @@
 import React from "react"
 
 function ListKey() {
-  const [todos, setTodos] = React.useState([
+  const [todos] = React.useState([
     { title: 'tony' },
     { title: 'tu' },
     { title: 'tien' },
   ])
 
   const todosFiltered: any = [];
-  todos.forEach(todo => {
+  todos.forEach((todo: any) => {
     const newItem = (
       <div key={todo.id}>{todo.title}</div>
     )

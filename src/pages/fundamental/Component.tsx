@@ -17,7 +17,7 @@ function StatefullComponent() {
 }
 
 function Component() {
-  const [count, setCount] = React.useState(1);
+  const [count] = React.useState(1);
 
   // user click => () => {} => execute function
   // function updateCount(number: number) {
@@ -42,7 +42,7 @@ function Component() {
     }
   }
 
-  function updateCount2(event, number) {
+  function updateCount2(event: any, number: any) {
    console.log('updateCount2: ', event, number)
   }; // memory B
 

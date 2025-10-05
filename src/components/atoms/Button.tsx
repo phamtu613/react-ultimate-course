@@ -6,7 +6,7 @@ type ButtonProps = {
 
 export default function Button({
   children,
-  type = "submit",
+  type = "button",
   onClick,
 }: ButtonProps) {
   return (
