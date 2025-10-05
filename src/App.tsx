@@ -6,6 +6,7 @@ import LiftingStateUp from "./pages/fundamental/LiftingStateUp";
 import ListKey from "./pages/fundamental/ListKey";
 import Props from "./pages/fundamental/Props";
 import State from "./pages/fundamental/State";
+import StateHook from "./pages/fundamental/StateHook";
 import StylingCSS from "./pages/fundamental/StylingCSS";
 import TonyColorBox from "./sampleApp/tony/TonyColorBox";
 import TuColorBox from "./sampleApp/tu/ColorBox/TuColorBox";
@@ -66,6 +67,10 @@ function App() {
       <br />
 
       <Form />
+
+      <br />
+      <br />
+      <StateHook />
 
       <br />
       <br />

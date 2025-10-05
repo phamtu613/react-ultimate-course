@@ -35,3 +35,5 @@ function EmployeeCreateModal({ open, closeModal }: EmployeeCreateModalProps) {
 }
 
 export default EmployeeCreateModal
+
+// useState + useReducer + useContext = redux
