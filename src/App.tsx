@@ -1,5 +1,7 @@
+import React from "react";
 import Component from "./pages/fundamental/Component";
 import ConditionalRendering from "./pages/fundamental/ConditionalRendering";
+import EffectHook from "./pages/fundamental/EffectHook";
 import Form from "./pages/fundamental/Form";
 import JSX from "./pages/fundamental/JSX";
 import LiftingStateUp from "./pages/fundamental/LiftingStateUp";
@@ -11,8 +13,10 @@ import StylingCSS from "./pages/fundamental/StylingCSS";
 import TonyColorBox from "./sampleApp/tony/TonyColorBox";
 import TuColorBox from "./sampleApp/tu/ColorBox/TuColorBox";
 import GenerateBox from "./sampleApp/tu/GenerateBox";
+import TonyEffectHook from "./sampleApp/tony/TonyEffectHook";
 
 function App() {
+  const [mounted, setMounted] = React.useState(true);''
   return (
     <>
       <JSX />
@@ -71,6 +75,18 @@ function App() {
       <br />
       <br />
       <StateHook />
+
+      <br />
+      <br />
+      <button type="button" onClick={() => setMounted(prevState => !prevState)}>Mount EffectHook</button>
+      {mounted && (
+        <EffectHook />
+      )}
+
+      <br />
+      <br />
+      <TonyEffectHook />
+      
 
       <br />
       <br />

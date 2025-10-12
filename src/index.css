@@ -83,6 +83,7 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+  color: #fff !important;
 }
 button:hover {
   border-color: #646cff;
@@ -184,4 +185,27 @@ button:focus-visible {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+
+.boxEffect {
+  width: 200px;
+  height: 200px;
+  border: 1px solid #000;
+  transition: all .3s;
+}
+
+.box1 {
+  background-color: #646cff;
+  /* display: block; */
+  opacity: 1;
+}
+
+.box1:hover {
+  /* display: none; */
+  opacity: 0;
+}
+
+.box2 {
+  background-color: #f00;
 }
