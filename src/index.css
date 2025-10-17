@@ -62,10 +62,7 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 0;
 }
 
 h1 {
@@ -187,12 +184,11 @@ button:focus-visible {
   }
 }
 
-
 .boxEffect {
   width: 200px;
   height: 200px;
   border: 1px solid #000;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .box1 {
