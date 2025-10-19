@@ -14,6 +14,7 @@ import TonyColorBox from "./sampleApp/tony/TonyColorBox";
 import TuColorBox from "./sampleApp/tu/ColorBox/TuColorBox";
 import GenerateBox from "./sampleApp/tu/GenerateBox";
 import TonyEffectHook from "./sampleApp/tony/TonyEffectHook";
+import RefHook from "./pages/fundamental/RefHook";
 
 function App() {
   const [mounted, setMounted] = React.useState(true);''
@@ -86,6 +87,10 @@ function App() {
       <br />
       <br />
       <TonyEffectHook />
+
+      <br />
+       <br />
+      <RefHook />
       
 
       <br />

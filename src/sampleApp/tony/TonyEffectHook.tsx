@@ -1,3 +1,4 @@
+import { useAppContext } from '@/contexts/AppContext';
 import React from 'react'
 
 /*
@@ -15,6 +16,7 @@ function TonyEffectHook() {
   const [page, setPage] = React.useState(1);
   const [firstName, setFirstName] = React.useState('');
   const [lastName, setLastName] = React.useState('');
+  const { updateUser } = useAppContext();
   // const [fullName, setFullName] = React.useState('');
 
   const fullName = firstName + lastName;
@@ -53,7 +55,7 @@ function TonyEffectHook() {
     //   completed: false
     // }
     // setTodos(prevState => [...prevState, newTodo])
-    setTodos(prevState => {
+    setTodos((prevState: any) => {
       const newTodo = {
         userId: Date.now(),
         id: Date.now(), 
@@ -62,6 +64,15 @@ function TonyEffectHook() {
       }
       return [...prevState, newTodo]
     })
+
+    // just demo set user in Appcontext
+    const newUser = {
+      id: Date.now(),
+      firstName: 'tony',
+      lastName: 'nguyen',
+      email: 'tony@gmail.com'
+    }
+    updateUser(newUser)
   }
 
   return (
