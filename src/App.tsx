@@ -1,4 +1,7 @@
 import React from "react";
+import { Link, Route, Routes } from 'react-router';
+
+
 import Component from "./pages/fundamental/Component";
 import ConditionalRendering from "./pages/fundamental/ConditionalRendering";
 import EffectHook from "./pages/fundamental/EffectHook";
@@ -15,22 +18,39 @@ import TuColorBox from "./sampleApp/tu/ColorBox/TuColorBox";
 import GenerateBox from "./sampleApp/tu/GenerateBox";
 import TonyEffectHook from "./sampleApp/tony/TonyEffectHook";
 import RefHook from "./pages/fundamental/RefHook";
+import PerformanceHook from "./pages/fundamental/PerformanceHook";
+import Product from "./pages/fundamental/Product";
+
+/*
+
+user click page 3 -> call api with page 3 -> navgiate('product?page=3', { replace })
+*/
 
 function App() {
   const [mounted, setMounted] = React.useState(true);''
   return (
     <>
-      <JSX />
 
+      <ul>
+        <li>
+          <Link to="/jsx">JSX</Link> {' '}
+          <Link to="/props">Props</Link> {' '}
+          <Link to="/state">State</Link> {' '}
+          <Link to="/product">Product</Link> {' '}
+        </li>
+      </ul>
+
+      <div id="main">
+        <Routes>
+          <Route path="/jsx" element={<JSX />} />
+          <Route path="/props" element={<Props />} />
+          <Route path="/state" element={<State />} />
+          <Route path="/product" element={<Product />} />
+        </Routes>
+      </div>
       <br />
       <br />
-
-      <Props />
-
-      <br />
-      <br />
-
-      <State />
+      <hr />
 
       <br />
       <br />
@@ -91,6 +111,10 @@ function App() {
       <br />
        <br />
       <RefHook />
+
+      <br />
+      <br />
+      <PerformanceHook />
       
 
       <br />
