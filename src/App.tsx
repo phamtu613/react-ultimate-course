@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Route, Routes } from 'react-router';
+import { Link, Route, Routes, useLocation } from 'react-router';
 
 
 import Component from "./pages/fundamental/Component";
@@ -20,6 +20,11 @@ import TonyEffectHook from "./sampleApp/tony/TonyEffectHook";
 import RefHook from "./pages/fundamental/RefHook";
 import PerformanceHook from "./pages/fundamental/PerformanceHook";
 import Product from "./pages/fundamental/Product";
+import User from "./pages/fundamental/User";
+import Personal from "./components/Personal";
+import Checkout from "./components/Checkout";
+import CheckoutDetail from "./components/CheckoutDetail";
+import PrivateRouter from "./routes/PrivateRouter";
 
 /*
 
@@ -27,7 +32,10 @@ user click page 3 -> call api with page 3 -> navgiate('product?page=3', { replac
 */
 
 function App() {
-  const [mounted, setMounted] = React.useState(true);''
+  const location = useLocation();
+  const [mounted, setMounted] = React.useState(true);
+
+  console.log('useLocation-------:', location)
   return (
     <>
 
@@ -37,6 +45,7 @@ function App() {
           <Link to="/props">Props</Link> {' '}
           <Link to="/state">State</Link> {' '}
           <Link to="/product">Product</Link> {' '}
+          <Link to="/user">User</Link> {' '}
         </li>
       </ul>
 
@@ -45,7 +54,17 @@ function App() {
           <Route path="/jsx" element={<JSX />} />
           <Route path="/props" element={<Props />} />
           <Route path="/state" element={<State />} />
-          <Route path="/product" element={<Product />} />
+          <Route path="/product" element={<PrivateRouter><Product /></PrivateRouter>} />
+          {/* <Route path="/user" element={<User />} />
+          <Route path="/user/personal" element={<Personal />} />
+          <Route path="/user/checkout" element={<Checkout />} /> */}
+          <Route path="/user" element={<PrivateRouter><User /></PrivateRouter>}>
+            <Route index element={<>Please click tab</>} />
+            <Route path="personal" element={<Personal />} />
+            <Route path="checkout" element={<Checkout />} />
+            <Route path="checkout/:checkoutId/book/:bookId" element={<CheckoutDetail />} />
+          </Route>
+
         </Routes>
       </div>
       <br />
