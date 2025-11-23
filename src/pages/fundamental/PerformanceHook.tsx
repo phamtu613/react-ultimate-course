@@ -1,4 +1,7 @@
+import { setLoading } from '@/redux/product.actions'
+import type { IRootState } from '@/types/redux'
 import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
 
 /*
@@ -70,6 +73,9 @@ const Child = React.memo(({ person }: any) => {
 }) 
 
 function PerformanceHook() {
+  const isLoading = useSelector((state: IRootState) => state.product.isLoading);
+  const dispatch = useDispatch();
+
   const [person, setPerson] = React.useState({
     firstName: '',
     lastName: '',
@@ -118,13 +124,23 @@ function PerformanceHook() {
   }, [carts])
 
   console.log('PerformanceHook: ', person)
+
+  function fetchProduct() {
+    dispatch(setLoading(true))
+  }
+
   return (
     <div>
       <h1>PerformanceHook</h1>
       Count: {count} <br />
       Total price:  {totalPrice}$ <br />
       <button type="button" onClick={() => setCount(prevState => prevState + 1)}>Update Count</button>
-      <button type="button" onClick={() => updatePerson()}>Update Person</button>
+      <button type="button" onClick={() => updatePerson()}>Update Person</button> <br />
+
+      <br />
+       <button type="button" onClick={fetchProduct}>
+        {isLoading ? 'Loading ...' : 'Get Product'}
+      </button> 
 
       <Child 
         person={person}

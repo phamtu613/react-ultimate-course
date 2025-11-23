@@ -25,6 +25,7 @@ import Personal from "./components/Personal";
 import Checkout from "./components/Checkout";
 import CheckoutDetail from "./components/CheckoutDetail";
 import PrivateRouter from "./routes/PrivateRouter";
+import { useSelector } from "react-redux";
 
 /*
 
@@ -34,8 +35,9 @@ user click page 3 -> call api with page 3 -> navgiate('product?page=3', { replac
 function App() {
   const location = useLocation();
   const [mounted, setMounted] = React.useState(true);
+  const state = useSelector(state => state)
 
-  console.log('useLocation-------:', location)
+  console.log('App state in store-------:', state)
   return (
     <>
 

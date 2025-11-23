@@ -1,4 +1,6 @@
+import type { IRootState } from '@/types/redux';
 import React, { type ChangeEvent, type RefObject } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 
 
 /*
@@ -55,6 +57,11 @@ const Input = React.forwardRef((_, ref) => {
 })
 
 function RefHook() {
+  const products = useSelector((state: IRootState) => state.product.products);
+  const isLoading = useSelector((state: IRootState) => state.product.isLoading);
+
+  console.log("REFhook redux: ", products)
+
   const [timestamp, setTimestamp] = React.useState(Date.now());
   let countRef = React.useRef(0);
   const divRef = React.useRef<HTMLDivElement | null>(null);
@@ -86,10 +93,20 @@ function RefHook() {
     console.log('firstName: ', inputRef.current.firstName)
   }
 
-  console.log('RefHook: ', countRef.current)
   return (
     <div>
       <h1>RefHook</h1>
+      <br />
+      Product got from redux:
+      {products.map(product => (
+        <div key={product.id}>
+          Title: {product.name}
+        </div>
+      ))} 
+      <br />
+      Product Loading: {isLoading ? 'true' : 'false'}
+      
+      <br />
       Timestamp: {timestamp} <br />
       Count: {countRef.current} <br />
       <div ref={divRef}></div> <br />
