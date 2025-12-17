@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Route, Routes, useLocation } from 'react-router';
+import { Link, Route, Routes } from 'react-router';
 
 
 import Component from "./pages/fundamental/Component";
@@ -33,7 +33,6 @@ user click page 3 -> call api with page 3 -> navgiate('product?page=3', { replac
 */
 
 function App() {
-  const location = useLocation();
   const [mounted, setMounted] = React.useState(true);
   const state = useSelector(state => state)
 

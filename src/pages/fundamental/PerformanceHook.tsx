@@ -83,7 +83,7 @@ function PerformanceHook() {
     age: 20
   }); // non-primitive - compare reference
   const [count, setCount] = React.useState(0); // primitive - compare value
-  const [carts, setCarts] = React.useState([
+  const [carts] = React.useState([
     { id: 1, name: 'iphone', price: 1000, quanlity: 1 },
     { id: 1, name: 'samsung', price: 600, quanlity: 2 },
     { id: 1, name: 'book', price: 200, quanlity: 5 }

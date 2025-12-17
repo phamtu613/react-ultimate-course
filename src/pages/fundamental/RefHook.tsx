@@ -1,6 +1,6 @@
 import type { IRootState } from '@/types/redux';
-import React, { type ChangeEvent, type RefObject } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
+import React, { type ChangeEvent } from 'react'
+import { useSelector } from 'react-redux';
 
 
 /*
@@ -33,10 +33,6 @@ const Product = React.forwardRef((_, ref) => {
   )
 })
 
-interface InputProps {
-  firstName: string,
-  onChangeFirstName: (event: ChangeEvent<HTMLInputElement>) => void
-}
 
 const Input = React.forwardRef((_, ref) => {
   const [firstName, setFirstName] = React.useState('');

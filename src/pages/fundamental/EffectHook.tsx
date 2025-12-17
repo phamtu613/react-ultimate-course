@@ -1,5 +1,4 @@
 import { useAppContext } from '@/contexts/AppContext';
-import { X } from 'lucide-react';
 import React from 'react'
 
 /*
@@ -17,7 +16,7 @@ clean up function - use to clean, clear side effect (clearTimeout, clearInterval
 */
 
 function EffectHook() {
-  const [todos, setTodos] = React.useState([]);
+  const [todos] = React.useState([]);
   const [count, setCount] = React.useState(1); 
   const { user } = useAppContext();
 
